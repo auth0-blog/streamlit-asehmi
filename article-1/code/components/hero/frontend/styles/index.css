@@ -1,0 +1,4 @@
+body {
+    @apply bg-white;
+    @apply m-5;
+}
