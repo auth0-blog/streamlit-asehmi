@@ -9,10 +9,10 @@ I will enhance a simple simple Streamlit app to include both user and API authen
 
 The articles in this series are:
 
-1. [Introduction to Streamlit and Streamlit Components](./article01/Readme.md)
-2. [Streamlit User and API Authentication](./article02/Readme.md)
-3. [Deploying Streamlit Component Apps to Heroku and Streamlit Sharing](./article03/Readme.md), and
-4. [A Secure Enterprise Streamlit Architecture Blueprint](./article04/Readme.md) (with Cloud + Proxy Authentication and Containers)
+1. [Introduction to Streamlit and Streamlit Components](./article-1/introduction-to-streamlit-and-streamlit-components.markdown)
+2. Streamlit User and API Authentication
+3. Deploying Streamlit Component Apps to Heroku and Streamlit Sharing, and
+4. A Secure Enterprise Streamlit Architecture Blueprint (with Cloud + Proxy Authentication and Containers)
 
-A bonus article describes an authenticated NLP appplication to train a Named Entity Recogniser using spaCy and Hugging Face Transformer pipelines.
+A bonus article describes an authenticated NLP application to train a Named Entity Recogniser using spaCy and Hugging Face Transformer pipelines.
 

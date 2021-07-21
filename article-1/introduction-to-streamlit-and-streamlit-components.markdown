@@ -422,7 +422,7 @@ Then, the Streamlit server periodically loops through its _websocket-to-session_
 
 In theory, there should be no crosstalk between sessions! Issues have been reported when running on Google Compute Engine in a Docker container. If the app is behind a proxy, it might make all users appear to be visiting from the same IP address.
 
-Ensure you have the latest Streamlit version installed as [this issue](https://discuss.streamlit.io/t/crosstalk-between-streamlit-sessions-with-multiple-users/319/3) was being actively adressed by the developers, who are very responsive and receptive to bug reports. Please use the discussion forum to report issues.
+Ensure you have the latest Streamlit version installed as [this issue](https://discuss.streamlit.io/t/crosstalk-between-streamlit-sessions-with-multiple-users/319/3) was being actively addressed by the developers, who are very responsive and receptive to bug reports. Please use the discussion forum to report issues.
 
 # Streamlit Components
 
@@ -495,13 +495,13 @@ component_zero = components.declare_component(
 This self-contained file does the following:
 
 1. Draws a simple HTML user interface
-2. Loads JavaScript which implements core Streamlit component lifecycle actions, namely the ability to:
+2. Loads JavaScript which implements core Streamlit component life cycle actions, namely the ability to:
 - Inform Streamlit client that the component is ready, using `streamlit:componentReady` message type.
 - Calculate or get it's own visible screen height, and inform Streamlit client, using `streamlit:setFrameHeight` message type.
 - Handle inbound `message` events from the Streamlit client; with `streamlit:render` event type being critical.
 - Send values (i.e., objects) to the Streamlit client application, using `streamlit:setComponentValue` message type.
 
-In this basic component, notice `_sendMessage()` function uses `window.parent.postMessage()`, which is as fundamental as it gets. The value objects you send to the Streamlit client application must be any JSON serializable object. Conceptually they can be viewed as data or events carrying a data payload. Inbound message values received on `streamlit:render` events, are automatically deserialized to JavaScript objects.
+In this basic component, notice `_sendMessage()` function uses `window.parent.postMessage()`, which is as fundamental as it gets. The value objects you send to the Streamlit client application must be any JSON serializable object. Conceptually they can be viewed as data or events carrying a data payload. Inbound message values received on `streamlit:render` events, are automatically de-serialized to JavaScript objects.
 
 It's only illustrative, but I have also implemented a simple pipeline of inbound message handlers and a dispatcher. I show this being used to initialize component data values, update the user interface, and to log output to the console. See `*_Handler` functions, `pipleline`, `initialize()` function.
 
@@ -759,7 +759,7 @@ _TODO_
 Some of you may be wondering if you can you use Streamlit instead of Jupyter Notebooks?
 
 ### Streamlit is not a single file only approach to app development
-* Single file apps are great for getting started. But as your app grows you must refactor the project into folders/files/modules/packages. You then import whatever you need in your main app.py file.
+* Single file apps are great for getting started. But as your app grows you must re-factor the project into folders/files/modules/packages. You then import whatever you need in your main app.py file.
 * Hot-reloading on deeply nested modules is a bit flaky though (but will you really have deeply nested modules in a simple app?). See [issue 366](https://github.com/streamlit/streamlit/issues/366)
 
 ### The Streamlit dev workflow is much more efficient than Jupyter Notebook's
@@ -777,7 +777,7 @@ Some of you may be wondering if you can you use Streamlit instead of Jupyter Not
 * Finished dashboard-like products are easy to make.
 
 ### How about the software development experience?
-* You seldom want to show people the numerous intermediate code steps in a notebook. From a literate programming perspective, code cells with many lines of boiler-plate pandas or matplotlib code are distracting.
+* You seldom want to show people the numerous intermediate code steps in a notebook. From a literate programming perspective, code cells with many lines of boiler-plate Pandas or Matplotlib code are distracting.
 * With Streamlit you can show selected parts of your code (which simultaneously get executed!) using `st.echo()`.
 * Running the full app during hot-reload is a great feature keeping all state aligned as expected. With notebooks it's very easy to get confused about which cells have run and in which order.
 * Notebook re-runs can take forever compared to Streamlit, because of data and python compilation caching, so fast iterations come easily.
