@@ -694,7 +694,7 @@ The Component Hero application takes the Zero component's design to the next lev
 
 In this application I will use React (Next.js), JavaScript and HTML to implement a component using current best practices and design patterns. The goal is to develop a component template that I can reuse and extend to integrate Auth0 authentication with Streamlit apps.
 
-## Component Hero demo
+### Component Hero demo
 
 Component Hero's use case is a password-protected multi-page Streamlit app. Instead of using Auth0 authentication just yet, I will fake the authentication with a probabilistic password guess generator, that has a high chance of generating the correct password after just a few attempts. The Streamlit client provides the multi-page app implementation and the Streamlit host plus front end component provides the (fake) authentication.
 
