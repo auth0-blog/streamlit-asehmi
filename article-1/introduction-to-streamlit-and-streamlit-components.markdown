@@ -16,7 +16,7 @@ related:
 
 **TL;DR:** Streamlit is an open-source app framework for Machine Learning and Data Science teams. You can create beautiful data apps in hours. All in pure Python. Streamlit was released in October 2019 and there's huge excitement about it in the Data Science community. It's not just for Data Science though. With its component extensibility architecture you can build and integrate most kinds of web front ends into Streamlit apps. This series of articles will show you how to build Streamlit apps and custom Streamlit Components, with the end goal of implementing Auth0 authentication of Streamlit apps using Streamlit Components.
 
-Here is the [GitHub repository](https://github.com/asehmi/guest-writer/tree/master/articles) for this series of articles.
+Here is the [GitHub repository](https://github.com/asehmi/streamlit-asehmi) for this series of articles.
 
 Let me put it out there, I'm a big fan of [Streamlit](https://www.streamlit.io/) and use it a lot at work and play. In my role as an NLP/ML/Data Engineer I use [Python](https://www.python.org/) along with several excellent Python frameworks such as [scikit-learn](https://scikit-learn.org/stable/), [spaCy](https://spacy.io/), [Pandas](https://pandas.pydata.org/), and [Altair Vizualization](https://altair-viz.github.io/). All these technologies work seamlessly with Streamlit. My experience with Streamlit can be verified on the official page of [Streamlit Creators](https://streamlit.io/creators).
 
@@ -634,7 +634,7 @@ It's only illustrative, but I have also implemented a simple pipeline of inbound
 </html>
 ```
 
-The counterpart to the front end is the Streamlit application. It's entry point is in `app.py`. The `frontend` module is imported and the component handle, `component_zero`, is used to create an instance of it. Interactions in the front end which give rise to value notifications will be received in the Streamlit client, which can be acted upon as required. I've provided simple design abstractions to make running of the component and handling its return values more explicit. They are `run_component()` and `handle_event()` respectively. This _wrapping_ makes the implementation neater and it'll be conceptually easier to understand the implementation of Component Hero which we will discuss in the next section.
+The counterpart to the front end is the Streamlit application. Its entry point is in `app.py`. The `frontend` module is imported and the component handle, `component_zero`, is used to create an instance of it. Interactions in the front end which give rise to value notifications will be received in the Streamlit client, which can be acted upon as required. I've provided simple design abstractions to make running of the component and handling its return values more explicit. They are `run_component()` and `handle_event()` respectively. This _wrapping_ makes the implementation neater and it'll be conceptually easier to understand the implementation of Component Hero which we will discuss in the next section.
 
 **`app.py`**
 
