@@ -1,8 +1,5 @@
 import streamlit as st
 
-from common import check_token
-import settings
-
 # --------------------------------------------------------------------------------
 def handle_event(event):
     if not event:
@@ -11,26 +8,22 @@ def handle_event(event):
     
     name = event.name
     data = event.data
+    source = event.source
 
     report = []
-    if (not name or not data):
-        print('>>> WARNING! - Null name or data. <<<')
-        report.append('>>> WARNING! - Null name or data. <<<')
-        st.session_state.report = report
-        return report
-
-    props = data.get('props', None)
-    action = data.get('action', None)
-
     report.append(name)
     report.append(data)
 
-    if name == 'onActionRequest':
-        report.append(f'{action} actions not supported')
+    # action and its initial properties
+    action = data.get('action', None)
+    props = data.get('props', None)
 
-    elif name == 'onStatusUpdate':
+    if name == 'onStatusUpdate':
         st.session_state.token = data.get('token', False)
+    elif name == 'onActionRequest':
+        report.append(f'{action} actions not supported')
+    elif name == 'onError':
+        report.append(f'>> ERROR WARNING! <<')
 
     st.session_state.report = report
-
     return report

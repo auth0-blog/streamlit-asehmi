@@ -87,15 +87,21 @@ const StreamlitComponent = (props: ComponentProps) => {
       setPasswordGuess(password)
       setToken(true)
       setCount(0)
-      return password
     // otherwise make it incorrect
     } else {
       setCount(count+1)
       setMessage('Try again? (' + attempts[3 - count % 4] + ')')
       setPasswordGuess(guess)
       setToken(false)
-      return guess
     } 
+  }
+
+  const logout = async () => {
+    setMessage('Generate a password guess to log in.')
+    setPasswordGuess('')
+    setToken(false)
+    setCount(0)
+    return passwordGuess
   }
 
   // ----------------------------------------------------
@@ -106,10 +112,8 @@ const StreamlitComponent = (props: ComponentProps) => {
         {hostname}{' | '}{message}
       </div>
       <div className="container my-4 ml-1 max-w-xl space-x-4">
-        <MyButton label='Generate password guess' onClickHandler={generatePasswordGuess} props={props} />
-      </div>
-      <div className="text-xs text-indigo-700">
-        {hostname}{' | '}{message}
+        {!token && (<MyButton label='Generate password guess' onClickHandler={generatePasswordGuess} props={props} />)}
+        {token && (<MyButton label='Logout' onClickHandler={logout} props={props} />)}
       </div>
     </header>
   )

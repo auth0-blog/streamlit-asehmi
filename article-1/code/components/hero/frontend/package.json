@@ -7,7 +7,7 @@
     ],
     "scripts": {
         "dev": "next dev -p 3001",
-        "build": "next build",
+        "build": "next build & next export",
         "start": "next start -p 3001",
         "start-streamlit": "cd .. && streamlit run --server.port 4010 app.py",
         "start-api": "python ../server/flask-api.py 8888",
