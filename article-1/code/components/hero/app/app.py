@@ -39,7 +39,7 @@ messageboard = st.empty()
 
 def main():
     if settings.USE_AUTHENTICATION:
-        with st.beta_expander('Authenticate'):
+        with st.expander('Authenticate'):
             import component_runner
             from component_event_handler import handle_event
 

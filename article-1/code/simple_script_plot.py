@@ -1,10 +1,15 @@
+import sys
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 
-# pip install drawilleplot
-# pip install windows-curses
-matplotlib.use('module://drawilleplot')
+try:
+  matplotlib.use('module://drawilleplot')
+except:
+  print('Please install `drawilleplot` and `windows-curses`:')
+  print('\tpip install drawilleplot')
+  print('\tpip install windows-curses')
+  sys.exit(0)
 
 def f1(t):
     return np.exp(-t) * np.cos(2*np.pi*t)

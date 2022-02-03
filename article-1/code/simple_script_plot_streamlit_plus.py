@@ -11,7 +11,7 @@ t = np.arange(0.0, 5.0, 0.1)
 
 def table():
     st.header('Tables')
-    c1, c2 = st.beta_columns(2)
+    c1, c2 = st.columns(2)
     c1.write(pd.DataFrame([x for x in zip(t,f1(t))]))
     c2.write(pd.DataFrame([x for x in zip(t,f2(t))]))
 
