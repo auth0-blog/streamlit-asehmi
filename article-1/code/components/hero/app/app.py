@@ -66,7 +66,7 @@ def main():
     # ABOUT
     st.sidebar.title('Component Hero Demo')
     st.sidebar.markdown('---')
-    st.sidebar.info('(c) 2021. CloudOpti Ltd. All rights reserved.')
+    st.sidebar.info('(c) 2022. CloudOpti Ltd. All rights reserved.')
 
 if __name__ == '__main__':
     st.sidebar.image('./images/logo.png', output_format='png')
