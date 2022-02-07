@@ -2,18 +2,6 @@ import streamlit as st
 
 import settings
 
-try:
-    import ptvsd
-    ptvsd.enable_attach(address=('localhost', 6789))
-    # ptvsd.wait_for_attach() # Only include this line if you always want to manually attach the debugger
-
-    # import debugpy
-    # debugpy.listen(('localhost', 6789))
-    # debugpy.wait_for_client() # Only include this line if you always want to manually attach the debugger
-except:
-    # Ignore... for Heroku deployments!
-    pass
-
 # --------------------------------------------------------------------------------
 
 # Initialize Session State variables

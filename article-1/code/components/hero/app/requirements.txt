@@ -11,4 +11,3 @@ plotly
 python-dotenv
 htmldate
 datefinder
-debugpy

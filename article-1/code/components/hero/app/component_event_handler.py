@@ -21,9 +21,11 @@ def handle_event(event):
     if name == 'onStatusUpdate':
         st.session_state.token = data.get('token', False)
     elif name == 'onActionRequest':
-        report.append(f'{action} actions not supported')
+        report.append(f'onActionRequest: {action} is not yet implemented.')
     elif name == 'onError':
-        report.append(f'>> ERROR WARNING! <<')
+        report.append([f'>> ERROR! <<', f'Source: {source}', f'Data: {data}'])
+    else:
+        report.append(['>> WARNING! <<', f'Event {name} is not implemented.', f'Source: {source}', f'Data: {data}'])
 
     st.session_state.report = report
     return report
