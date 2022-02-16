@@ -17,7 +17,7 @@ def main():
     st.title('Component Zero Demo')
     st.session_state.counter = st.session_state.counter + 1
     props = {
-        'initial_state': {'message': 'Hello! Enter some text' },
+        'initial_state': {'message': '' },
         'counter': st.session_state.counter,
         'datetime': str(datetime.now().strftime("%H:%M:%S, %d %b %Y"))
     }
