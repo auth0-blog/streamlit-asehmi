@@ -6,7 +6,7 @@ import numpy as np
 try:
   matplotlib.use('module://drawilleplot')
 except:
-  print('Please install `drawilleplot` and `windows-curses`:')
+  print('Please install `drawilleplot` and `windows-curses` (the latter isn\'t required for Unix flavors):')
   print('\tpip install drawilleplot')
   print('\tpip install windows-curses')
   sys.exit(0)

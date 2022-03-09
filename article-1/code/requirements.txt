@@ -11,3 +11,5 @@ plotly
 python-dotenv
 htmldate
 datefinder
+drawilleplot
+windows-curses

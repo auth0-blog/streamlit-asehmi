@@ -11,6 +11,7 @@
         "start": "next start -p 3001",
         "start-streamlit": "cd ../app && streamlit run --server.port 4010 app.py",
         "start-api": "python ../server/flask-api.py 8888",
+        "start-all": "concurrently \"npx next start -p 3001\" \"cd ../app && streamlit run --server.port 4010 app.py\"",
         "typecheck": "tsc"
     },
     "dependencies": {
