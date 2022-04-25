@@ -1,0 +1,15 @@
+streamlit
+numpy
+pandas
+openpyxl
+django-environ
+dataclasses
+environ
+markdown
+matplotlib
+plotly
+python-dotenv
+htmldate
+datefinder
+pyjwt
+flask
