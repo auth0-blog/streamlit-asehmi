@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Head from 'next/head';
 
@@ -43,6 +44,10 @@ export default function AuthApp({ session }) {
         }
     }, [sessionInfo])
 
+    const ButtonLinkStyle = `inline-flex px-4 py-1 border border-transparent
+    rounded-md shadow-sm text-md font-small text-white bg-indigo-600 hover:bg-pink-600
+    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`
+
     return (
         <div>
             <Head>
@@ -57,12 +62,9 @@ export default function AuthApp({ session }) {
                         <div className="flex flex-col mx-20 gap-3">
                             <p className="text-xl">Sign into the application...</p>
                             <div>
-                                <a  href="/api/auth/login"
-                                    className="inline-flex px-4 py-1 border border-transparent
-                                    rounded-md shadow-sm text-md font-small text-white bg-indigo-600 hover:bg-pink-600
-                                    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                                    Login
-                                </a>
+                                <Link  href="/api/auth/login" passHref>
+                                    <a className={ButtonLinkStyle}>Login</a>
+                                </Link>
                             </div>
                         </div>
                     )}
@@ -71,12 +73,9 @@ export default function AuthApp({ session }) {
                             <div className="text-xl">Signed in.</div>
                             <div className="text-xl">Return to the application, or sign out...</div>
                             <div>
-                                <a  href="/api/auth/logout"
-                                    className="inline-flex px-4 py-1 border border-transparent
-                                    rounded-md shadow-sm text-md font-small text-white bg-indigo-600 hover:bg-pink-600
-                                    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                                    Logout
-                                </a>
+                                <Link  href="/api/auth/logout" passHref>
+                                    <a className={ButtonLinkStyle}>Logout</a>
+                                </Link>
                             </div>
                         </div>
                     )}

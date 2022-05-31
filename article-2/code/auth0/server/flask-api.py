@@ -79,16 +79,16 @@ def get_token_auth_header() -> str:
     if parts[0].lower() != "bearer":
         raise AuthError({"code": "invalid_header",
                          "description":
-                            "Authorization header must start with"
-                            " Bearer"}, 401)
+                            "Authorization header must start with "
+                            "Bearer"}, 401)
     if len(parts) == 1:
         raise AuthError({"code": "invalid_header",
                          "description": "Token not found"}, 401)
     if len(parts) > 2:
         raise AuthError({"code": "invalid_header",
                          "description":
-                            "Authorization header must be"
-                            " Bearer token"}, 401)
+                            "Authorization header must be "
+                            "Bearer token"}, 401)
 
     token = parts[1]
     return token
@@ -156,13 +156,13 @@ def requires_auth(func):
             except jwt.JWTClaimsError as jwt_claims_error:
                 raise AuthError({"code": "invalid_claims",
                                  "description":
-                                    "incorrect claims,"
-                                    " please check the audience and issuer"}, 401) from jwt_claims_error
+                                    "incorrect claims, "
+                                    "please check the audience and issuer"}, 401) from jwt_claims_error
             except Exception as exc:
                 raise AuthError({"code": "invalid_header",
                                  "description":
-                                    "Unable to parse authentication"
-                                    " token."}, 401) from exc
+                                    "Unable to parse authentication "
+                                    "token."}, 401) from exc
 
             _request_ctx_stack.top.current_user = payload
             return func(*args, **kwargs)
@@ -210,8 +210,8 @@ def pong_scoped():
     """A valid access token and an appropriate scope are required to access this route
     """
     if requires_scope("read:messages"):
-        result = {'data': "Hello from a private endpoint!"
-                            "You need to be authenticated and have a scope of read:messages to see this."}
+        result = {'data': "Hello from a private endpoint! "
+                          "You need to be authenticated and have a scope of read:messages to see this."}
         return result
     raise AuthError({
         "code": "Unauthorized",
