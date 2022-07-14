@@ -13,7 +13,7 @@ def main(title):
     action = capabilities[capability]
 
     st.title(title)
-    st.write(f'## Welcome to the app that does {capabilities[capability]}! {capability[-1]}')
+    st.write(f'## Welcome to the app that does {action}! {capability[-1]}')
 
     response = None
     base_url = settings.REMOTE_API_BASE_URL
