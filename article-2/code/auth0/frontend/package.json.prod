@@ -1,0 +1,40 @@
+{
+    "name": "cloudopti-app-component-frontend",
+    "version": "0.1.0",
+    "private": true,
+    "cacheDirectories": [
+        ".next/cache"
+    ],
+    "scripts": {
+        "dev": "next dev -p $PORT",
+        "build": "next build",
+        "start": "next start -p $PORT",
+        "start-streamlit": "cd ../app && streamlit run --server.port 4010 app.py",
+        "start-api": "python ../server/flask-api.py 8888",
+        "start-all": "concurrently \"npx next start -p $PORT\" \"cd ../server && python flask-api.py 8888\" \"cd ../app && streamlit run --server.port 4010 app.py\"",
+        "typecheck": "tsc"
+    },
+    "dependencies": {
+        "@auth0/nextjs-auth0": "^1.9.0",
+        "@types/classnames": "^2.3.1",
+        "@types/jest": "^25.2.2",
+        "@types/node": "^12.20.46",
+        "@types/react": "^17.0.39",
+        "@types/react-dom": "^17.0.13",
+        "autoprefixer": "^10.2.4",
+        "classnames": "^2.3.1",
+        "cors": "^2.8.5",
+        "date-fns": "^2.10.0",
+        "localforage": "^1.10.0",
+        "localforage-driver-memory": "^1.0.5",
+        "next": "^12.1.0",
+        "next-transpile-modules": "^9.0.0",
+        "postcss": "^8.4.7",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "reactjs-popup": "^2.0.4",
+        "streamlit-component-lib": "^1.4.0",
+        "tailwindcss": "^2.2.19",
+        "typescript": "^4.3.2"
+    }
+}
